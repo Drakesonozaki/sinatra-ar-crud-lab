@@ -33,13 +33,13 @@ class ApplicationController < Sinatra::Base
   # display action
   get "/articles/:id" do
     @article = Article.find(params[:id])
-    erb :show
+    erb :show #remember to create show.erb
   end
 
   # editor action
   get "/articles/:id/edit" do
     @article = Article.find(params[:id])
-    erb :edit
+    erb :edit 
   end
 
   # change action
@@ -52,7 +52,7 @@ class ApplicationController < Sinatra::Base
   #delete action
   delete "/articles/:id" do
     Article.destroy(params[:id])
-    redirect to "/articles"
+    redirect to "/articles" #upon deletion sends the user back to the /articles path.
   end
 
 
